@@ -1,12 +1,15 @@
+import { clear } from "./card.mjs";
+
 // Datalist
 const cardSearch = document.getElementById("card-list");
-// Get each card object from API
-const res = await axios("https://api.tcgdex.net/v2/en/cards");
-const cards = await res.data;
-
 
 // Function to initially load the API into datalist
 export async function initialLoad() {
+    // Get each card object from API
+    const res = await axios("https://api.tcgdex.net/v2/en/cards");
+    const cards = await res.data;
+
+
     console.log(cards);
     let count = 0;
 
@@ -29,16 +32,22 @@ export async function initialLoad() {
 // Function for submitBtn 
 export async function displayCardInfo(evt) {
     evt.preventDefault();
+    // Get each card object from API
+    const res = await axios("https://api.tcgdex.net/v2/en/cards");
+    const cards = await res.data;
     // User input textbox
     let input = document.getElementById("searchbar");
     // Image Display div
     let display = document.getElementById("card-display");
+    // Clear form
+    clear();
     // Image for Pokemon Card
     let img = document.createElement("img");
 
     let cardName = input.value;
 
     let pokeInfoList = document.createElement('ul');
+    pokeInfoList.style.paddingBottom = "5px";
 
 
     // Search for card's image source
@@ -49,7 +58,8 @@ export async function displayCardInfo(evt) {
                 if (cardID === card.id) {
                     // img source 
                     img.src = `${card.image}/high.png`;
-                    img.style.width = "80%";
+                    img.style.width = "40%";
+                    img.style.paddingTop = "10px";
                     // Getting card data
                     axios
                         .get(`https://api.tcgdex.net/v2/en/cards/${card.id}`)
@@ -86,15 +96,3 @@ export async function displayCardInfo(evt) {
     display.appendChild(img);
     display.appendChild(pokeInfoList);
 }
-
-// async function getSpecs() {
-//     // Card specifications
-//     let pokemon = '';
-//     let rarity = '';
-//     let setName = '';
-//     let hp = '';
-//     let type = '';
-//     let illustrator = '';
-
-//     axios.get(`https://api.tcgdex.net/v2/en/cards/${card.id}`)
-// }

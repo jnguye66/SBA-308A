@@ -1,3 +1,24 @@
+html * {
+    font-family: sans-serif;
+    color: peachpuff;
+}
+
+body {
+    background-color: #12121d;
+}
+
 ul {
     list-style: none;
+    text-align: center;
+    padding-right: 30px;
+    margin-bottom: 5px;
+    /* border: black solid 1px; */
 }
+
+/* #card-search {
+    border: black solid 1px;
+}
+
+#card-display {
+    border: black solid 1px;
+} */

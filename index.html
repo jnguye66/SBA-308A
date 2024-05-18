@@ -23,26 +23,37 @@
 
 <body>
     <h1>Pokemon TCG Database</h1>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly; margin: auto;">
+        <!-- Card Search -->
+        <div>
+            <div style="width: 48vw; background: #24243b; border-radius: 25px;">
+                <form id="card-search" style="text-align: center;">
+                        <h2 style="padding-top: 5px;">Search a Card</h2>
+                    </label>
+                    <!-- Input for card-list datalist -->
+                    <input id="searchbar" name="searchbar" list="card-list" style="background: #24243b;"/>
 
-    <!-- Card Search -->
-    <div>
-        <form id="card-search">
-            <label for="searchbar"><h2>Search a Card</h2></label>
-            <!-- Input for card-list datalist -->
-            <input id="searchbar" name="searchbar" list="card-list"/>
+                    <!-- Datalist containing over 17000 Pokemon Cards -->
+                    <datalist id="card-list"></datalist>
 
-            <!-- Datalist containing over 17000 Pokemon Cards -->
-            <datalist id="card-list"></datalist>
+                    <input type="submit" id="search" name="search" style="margin-bottom: 10px; background: #24243b; box-shadow: 1;"/>
+                </form>
+            </div>
 
-            <input type="submit" id="search" name="search" />
-        </form>
-    </div>
+            <!-- Card Display -->
+            <div style="width: 48vw; background: #24243b; border-radius: 25px; margin-top: 20px;">
+                <form id="card-display" style="text-align: center; background: #24243b; border-radius: 25px;">
+                </form>
+            </div>
+        </div>
 
-    <!-- Card Display -->
-    <div>
-        <form  id="card-display">
-            
-        </form>
+        <!-- Card Creator -->
+        <div style="width: 48vw; background: #24243b; border-radius: 25px;">
+            <form id="card-create" style="text-align: center;">
+                <h2>Create a Card</h2>
+            </form>
+        </div>
     </div>
 </body>
+
 </html>

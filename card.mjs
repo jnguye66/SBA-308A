@@ -10,3 +10,10 @@ Card.initialLoad();
 
 // Submit Button Listener for click to display card
 cardForm.addEventListener("submit", Card.displayCardInfo);
+
+export async function clear(){
+    const info = document.getElementById('card-display');
+    while (info.firstChild){
+        info.removeChild(info.firstChild);
+    }
+}
