@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
 
     <!-- JQuery -->
     <script rc="https://code.jquery.com/jquery-3.6.4.min.js"
-    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
     <!-- Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -19,17 +20,29 @@
     <script type="module" src="functions.mjs"></script>
     <script type="module" src="card.mjs"></script>
 </head>
+
 <body>
     <h1>Pokemon TCG Database</h1>
 
     <!-- Card Search -->
-    <div id="card-search">
-        <label for="card-search"><h2>Search a Card</h2></label>
-        <input list="card-list" id="card-search" name="card-search"/>
-        <!-- Datalist containing over 17000 Pokemon Cards -->
-        <datalist id="card-list"></datalist>
-        
-        <input type="submit"/>
+    <div>
+        <form id="card-search">
+            <label for="searchbar"><h2>Search a Card</h2></label>
+            <!-- Input for card-list datalist -->
+            <input id="searchbar" name="searchbar" list="card-list"/>
+
+            <!-- Datalist containing over 17000 Pokemon Cards -->
+            <datalist id="card-list"></datalist>
+
+            <input type="submit" id="search" name="search" />
+        </form>
+    </div>
+
+    <!-- Card Display -->
+    <div>
+        <form  id="card-display">
+            
+        </form>
     </div>
 </body>
 </html>
