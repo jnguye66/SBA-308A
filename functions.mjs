@@ -49,12 +49,13 @@ export async function displayCardInfo(evt) {
                 if (cardID === card.id) {
                     // img source 
                     img.src = `${card.image}/high.png`;
+                    img.style.width = "80%";
                     // Getting card data
                     axios
                         .get(`https://api.tcgdex.net/v2/en/cards/${card.id}`)
-                        .then(function (response) {
+                        .then(async function (response) {
                             // Card link to extract data from
-                            let pokeData = response.data;
+                            let pokeData = await response.data;
                             console.log(response.data);
 
                             let name = document.createElement('li');
@@ -64,12 +65,12 @@ export async function displayCardInfo(evt) {
                             let type = document.createElement('li');
                             let illustrator = document.createElement('li');
 
-                            name = pokeData.name;
-                            rarity = pokeData.rarity;
-                            setName = pokeData.set.name;
-                            hp = pokeData.hp;
-                            type = pokeData.type;
-                            illustrator = pokeData.illustrator;
+                            name.textContent = `Name: ${pokeData.name}`;
+                            rarity.textContent = `Rarity: ${pokeData.rarity}`;
+                            setName.textContent = `Set: ${pokeData.set.name}`;
+                            hp.textContent = `HP: ${pokeData.hp}`;
+                            type.textContent = `Type: ${pokeData.type}`;
+                            illustrator.textContent = `Illustrator: ${pokeData.illustrator}`;
 
                             pokeInfoList.appendChild(name);
                             pokeInfoList.appendChild(rarity);
@@ -82,8 +83,8 @@ export async function displayCardInfo(evt) {
             })
         }
     }
-    display.appendChild(pokeInfoList);
     display.appendChild(img);
+    display.appendChild(pokeInfoList);
 }
 
 // async function getSpecs() {
