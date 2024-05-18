@@ -96,3 +96,39 @@ export async function displayCardInfo(evt) {
     display.appendChild(img);
     display.appendChild(pokeInfoList);
 }
+
+// export async function createCard(evt) {
+//     evt.preventDefault();
+//     // Grabbed list of Pokemon names from different API
+//     const res = await axios("https://pokeapi.co/api/v2/pokedex/1/");
+//     const data = await res.data;
+    
+//     const pokedex = data.pokemon_entries;
+//     console.log(pokedex[0].pokemon_species.name);
+
+//     let inputName = document.getElementById("name");
+//     let inputRarity = document.getElementById("rarity");
+//     let inputSet = document.getElementById("set");
+//     let inputHP = document.getElementById("hp");
+//     let inputType = document.getElementById("type");
+
+//     pokedex.forEach((pokemon) => {
+//         let name = pokemon.pokemon_species.name;
+
+//         if (inputName.value !== name) {
+//             console.log(inputName.value);
+//             alert("Please enter a valid Pokemon.");
+//         }
+//     })
+// }
+
+// Alert Message Function
+function alert(msg) {
+    const errorEl = document.getElementById("errorDisplay");
+    errorEl.style.display = "block";
+    errorEl.textContent = msg;
+
+    setTimeout(() => {
+        errorEl.style.display = "none";
+    }, 3000);
+}

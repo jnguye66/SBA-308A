@@ -19,24 +19,26 @@
     <!-- Scripts -->
     <script type="module" src="functions.mjs"></script>
     <script type="module" src="card.mjs"></script>
+    <script type="module" src="creator.mjs"></script>
 </head>
 
 <body>
-    <h1>Pokemon TCG Database</h1>
+    <h1 style="text-align: center;">Pokemon TCG Database</h1>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly; margin: auto;">
         <!-- Card Search -->
         <div>
-            <div style="width: 48vw; background: #24243b; border-radius: 25px;">
+            <div style="width: 40vw; background: #363658; border-radius: 25px;">
                 <form id="card-search" style="text-align: center;">
-                        <h2 style="padding-top: 5px;">Search a Card</h2>
+                    <h2 style="padding-top: 5px;">Search a Card</h2>
                     </label>
                     <!-- Input for card-list datalist -->
-                    <input id="searchbar" name="searchbar" list="card-list" style="background: #24243b;"/>
+                    <input id="searchbar" name="searchbar" list="card-list" style="background: #24243b;" />
 
                     <!-- Datalist containing over 17000 Pokemon Cards -->
                     <datalist id="card-list"></datalist>
 
-                    <input type="submit" id="search" name="search" style="margin-bottom: 10px; background: #24243b; box-shadow: 1;"/>
+                    <input type="submit" id="search" name="search"
+                        style="margin-bottom: 10px; background: #24243b; box-shadow: 1;" />
                 </form>
             </div>
 
@@ -48,12 +50,43 @@
         </div>
 
         <!-- Card Creator -->
-        <div style="width: 48vw; background: #24243b; border-radius: 25px;">
-            <form id="card-create" style="text-align: center;">
-                <h2>Create a Card</h2>
-            </form>
+        <div>
+            <div style="width: 40vw; background: #24243b; border-radius: 25px; text-align: center;">
+                <form id="card-create" style="width: 40vw; background-color: #363658; border-radius: 25px; text-align: center;">
+                    <h2>Create a Card</h2>
+                    <div style="width: 230px; margin: auto">
+                        <div id="main-stats">
+                            <label for="name" style="text-decoration: underline">Pokemon:</label>
+                            <input type="text" name="name" id="name" style="width: 200px; background: #24243b;">
+        
+                            <label for="rarity" style="text-decoration: underline">Rarity:</label>
+                            <input type="text" name="rarity" id="rarity" style="width: 200px; background: #24243b;">
+        
+                            <label for="set" style="text-decoration: underline">Set:</label>
+                            <input type="text" name="set" id="set" style="width: 200px; background: #24243b;">
+        
+                            <label for="hp" style="text-decoration: underline">HP:</label>
+                            <input type="text" name="hp" id="hp" style="width: 200px; background: #24243b;">
+
+                            <label for="type" style="text-decoration: underline">Type:</label>
+                            <input type="text" name="type" id="type" style="width: 200px; background: #24243b;">
+                        </div>
+                    </div>
+                    <input type="submit" value="Submit" style="margin-top:15px; margin-bottom: 10px;background: #24243b; box-shadow: 1;">
+                </form>
+            </div>
+
+            <!-- Card Creator Display -->
+            <div>
+                <form id="card-creator-display" style="text-align: center;display: inline-block;">
+                    
+                </form>
+            </div>
         </div>
     </div>
+
+    <!-- Displays Errors -->
+    <div id="errorDisplay"></div>
 </body>
 
 </html>
